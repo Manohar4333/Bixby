@@ -5,23 +5,26 @@
     </div>
     <div class="col-12 col-md-4">
         <h2 class="text-secondary">Login</h2>
-        <div class="form-group">
-            <label for="" class="form-label">
-                Username
-            </label>
-            <input type="text" class="form-control" [ngModel] = "username" placeholder="Username">
-        </div>
-        <div class="form-group">
-            <label for="" class="form-label">Password</label>
-            <input type="password" class="form-control" placeholder="Password">
-        </div>
-        <div class="form-group">
-            <br>
-            <button class="btn btn-warning" (click)="checkLogin()">
-            Login
-            </button>
-            <button class="btn btn-secondary">Cancel</button>
-        </div>
+        <form action="" [formGroup]="loginForm" (ngSubmit)="checkLogin()">
+            <div class="form-group">
+                <label for="" class="form-label">
+                    Username
+                </label>
+                <input type="text" class="form-control" formControlName= "username" placeholder="Username" pattern="[a-zA-Z]">
+                
+            </div>
+            <div class="form-group">
+                <label for="" class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName ="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <br>
+                <button class="btn btn-warning" (click)="checkLogin()">
+                Login
+                </button>
+                <button class="btn btn-secondary">Cancel</button>
+            </div>
+        </form>
 
     </div>
 </div>
